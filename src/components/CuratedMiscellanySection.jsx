@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, BookOpen, Star, Clock } from 'lucide-react';
+import { ExternalLink, BookOpen, Star } from 'lucide-react';
 
 export default function CuratedMiscellanySection({ 
   gems, 
@@ -10,7 +10,7 @@ export default function CuratedMiscellanySection({
 
   const categories = [
     'All',
-    '⭐️ Staff Picks',
+    '⭐️ Personal Favorites',
     'Essays',
     'The New Yorker',
     'Articles',
@@ -27,7 +27,7 @@ export default function CuratedMiscellanySection({
 
   const filteredGems = gems.filter((gem) => {
     let matchesCat = true;
-    if (selectedCategory === '⭐️ Staff Picks') {
+    if (selectedCategory === '⭐️ Personal Favorites') {
       matchesCat = gem.isStaffPick;
     } else if (selectedCategory !== 'All') {
       matchesCat = gem.category.toLowerCase() === selectedCategory.toLowerCase();
@@ -67,21 +67,21 @@ export default function CuratedMiscellanySection({
         </div>
       </div>
 
-      {/* Category Navigation (Dense) */}
-      <div className="flex items-center gap-3 overflow-x-auto pb-1.5 scrollbar-none border-b border-[#e5e5e5] text-[11px] font-sans uppercase tracking-wider">
+      {/* Category Navigation (Cleanly Wrapped, No Horizontal Scrollbar) */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-[#e5e5e5] pb-2.5 text-[11px] font-sans uppercase tracking-wider">
         {categories.map((cat) => {
-          const isStaff = cat === '⭐️ Staff Picks';
+          const isFavorite = cat === '⭐️ Personal Favorites';
           return (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`whitespace-nowrap pb-1.5 border-b-2 transition-all flex items-center gap-1 ${
+              className={`pb-1 border-b-2 transition-all flex items-center gap-1 ${
                 selectedCategory === cat
                   ? 'border-[#111111] text-[#111111] font-semibold'
                   : 'border-transparent text-[#777777] hover:text-[#111111]'
               }`}
             >
-              {isStaff && <Star className="w-2.5 h-2.5 fill-[#111111] text-[#111111]" />}
+              {isFavorite && <Star className="w-2.5 h-2.5 fill-[#111111] text-[#111111]" />}
               {cat}
             </button>
           );
@@ -141,7 +141,7 @@ export default function CuratedMiscellanySection({
                   <div className="flex items-center gap-2 flex-shrink-0 self-start sm:self-auto text-[10px] font-sans">
                     {gem.isStaffPick && (
                       <span className="text-[#111111] font-semibold flex items-center gap-0.5">
-                        <Star className="w-2.5 h-2.5 fill-[#111111]" /> Pick
+                        <Star className="w-2.5 h-2.5 fill-[#111111]" /> Favorite
                       </span>
                     )}
 

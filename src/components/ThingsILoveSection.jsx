@@ -41,14 +41,14 @@ export default function ThingsILoveSection({ things = [], searchQuery = '' }) {
         </div>
       ) : (
         <>
-          {/* Category Navigation (if items exist) */}
+          {/* Category Navigation (Cleanly Wrapped, No Horizontal Scrollbar) */}
           {categories.length > 1 && (
-            <div className="flex items-center gap-3 overflow-x-auto pb-1.5 scrollbar-none border-b border-[#e5e5e5] text-[11px] font-sans uppercase tracking-wider">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-[#e5e5e5] pb-2.5 text-[11px] font-sans uppercase tracking-wider">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`whitespace-nowrap pb-1.5 border-b-2 transition-all ${
+                  className={`pb-1 border-b-2 transition-all ${
                     selectedCategory === cat
                       ? 'border-[#111111] text-[#111111] font-semibold'
                       : 'border-transparent text-[#777777] hover:text-[#111111]'
