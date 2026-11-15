@@ -53,17 +53,17 @@ export default function CuratedMiscellanySection({
       {/* Editorial Header (Compact) */}
       <div className="border-b border-[#111111] pb-3">
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
-          <div className="flex items-baseline gap-3">
-            <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#888888]">
+          <div>
+            <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#888888] block mb-1">
               Section II
             </span>
-            <h2 className="font-display text-2xl sm:text-3xl font-normal text-[#111111] tracking-tight">
-              Sherpa’s Miscellany
+            <h2 className="font-serif italic text-base sm:text-lg text-[#222222] leading-snug">
+              Investigative journalism, aviation post-mortems, transfinite mathematics, eerie manga, and internet lore.
             </h2>
           </div>
-          <p className="font-serif text-xs text-[#666666] italic">
-            Curated internet archive • {filteredGems.length} pieces
-          </p>
+          <span className="font-sans text-[11px] text-[#888888] whitespace-nowrap flex-shrink-0 self-end sm:self-auto">
+            {filteredGems.length} pieces
+          </span>
         </div>
       </div>
 

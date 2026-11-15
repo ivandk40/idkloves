@@ -10,7 +10,7 @@ export default function Footer({ onSelectSection }) {
     <footer className="mt-20 border-t border-[#111111] bg-white py-10 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
         <p className="font-serif italic text-xs text-[#777777]">
-          Migrated from Sherpa’s Miscellany of Compendious Amusements.
+          Curated curiosities from the far reaches of the internet.
         </p>
 
         <div className="flex items-center gap-6 text-xs font-sans uppercase tracking-widest text-[#555555]">
