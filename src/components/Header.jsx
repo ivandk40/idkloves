@@ -16,7 +16,7 @@ export default function Header({
         
         {/* Subtitle / Header Moniker */}
         <p className="font-sans text-xs sm:text-sm uppercase tracking-[0.25em] text-[#666666]">
-          A Personal Canon &amp; Curated Amusements
+          A Cabinet of Curiosities &amp; Personal Affections
         </p>
 
         {/* Minimalist 2-Section Switcher */}
