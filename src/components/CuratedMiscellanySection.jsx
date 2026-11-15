@@ -55,7 +55,7 @@ export default function CuratedMiscellanySection({
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
           <div>
             <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#888888] block mb-1">
-              Section II
+              Section I
             </span>
             <h2 className="font-serif italic text-base sm:text-lg text-[#222222] leading-snug">
               Investigative journalism, aviation post-mortems, darknet dispatches, transfinite mathematics, bizarre true crime, eerie manga, and Reddit folklore.

@@ -22,19 +22,6 @@ export default function Header({
         {/* Minimalist 2-Section Switcher */}
         <div className="mt-3.5 flex items-center justify-center gap-8 border-t border-b border-[#e5e5e5] py-2 text-xs sm:text-sm font-sans uppercase tracking-widest">
           <button
-            onClick={() => setActiveTab('loves')}
-            className={`transition-all py-1 border-b-2 ${
-              activeTab === 'loves'
-                ? 'border-[#111111] text-[#111111] font-semibold'
-                : 'border-transparent text-[#777777] hover:text-[#111111]'
-            }`}
-          >
-            Things I Love {counts.loves > 0 ? `(${counts.loves})` : ''}
-          </button>
-
-          <span className="text-[#cccccc]">•</span>
-
-          <button
             onClick={() => setActiveTab('curated')}
             className={`transition-all py-1 border-b-2 ${
               activeTab === 'curated'
@@ -43,6 +30,19 @@ export default function Header({
             }`}
           >
             Compendious Amusements ({counts.curated})
+          </button>
+
+          <span className="text-[#cccccc]">•</span>
+
+          <button
+            onClick={() => setActiveTab('loves')}
+            className={`transition-all py-1 border-b-2 ${
+              activeTab === 'loves'
+                ? 'border-[#111111] text-[#111111] font-semibold'
+                : 'border-transparent text-[#777777] hover:text-[#111111]'
+            }`}
+          >
+            Things I Love {counts.loves > 0 ? `(${counts.loves})` : ''}
           </button>
         </div>
       </div>

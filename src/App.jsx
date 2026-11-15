@@ -15,8 +15,8 @@ export default function App() {
     localStorage.removeItem('idkloves_things');
   }
 
-  // Tab state: 'loves' | 'curated'
-  const [activeTab, setActiveTab] = useState('loves');
+  // Tab state: 'curated' is the primary first section
+  const [activeTab, setActiveTab] = useState('curated');
   const [searchQuery, setSearchQuery] = useState('');
 
   // Things I Love list is blank by default

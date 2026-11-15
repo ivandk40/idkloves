@@ -21,7 +21,7 @@ export default function ThingsILoveSection({ things = [], searchQuery = '' }) {
       <div className="border-b border-[#111111] pb-3">
         <div className="flex items-baseline gap-3">
           <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#888888]">
-            Section I
+            Section II
           </span>
           <h2 className="font-display text-2xl sm:text-3xl font-normal text-[#111111] tracking-tight">
             Things I Love

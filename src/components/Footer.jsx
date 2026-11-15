@@ -15,17 +15,17 @@ export default function Footer({ onSelectSection }) {
 
         <div className="flex items-center gap-6 text-xs font-sans uppercase tracking-widest text-[#555555]">
           <button 
-            onClick={() => onSelectSection('loves')}
-            className="hover:text-[#111111] transition-colors"
-          >
-            Things I Love
-          </button>
-          <span>•</span>
-          <button 
             onClick={() => onSelectSection('curated')}
             className="hover:text-[#111111] transition-colors"
           >
             Compendious Amusements
+          </button>
+          <span>•</span>
+          <button 
+            onClick={() => onSelectSection('loves')}
+            className="hover:text-[#111111] transition-colors"
+          >
+            Things I Love
           </button>
           <span>•</span>
           <button 
