@@ -8,18 +8,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Newsreader', 'Fraunces', 'Georgia', 'Cambria', 'serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        display: ['"Libre Caslon Display"', '"Libre Caslon Text"', 'Caslon', 'Georgia', 'serif'],
+        serif: ['"Libre Caslon Text"', 'Caslon', 'Georgia', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        brand: {
-          50: '#fdf8f6',
-          100: '#f2e8e5',
-          200: '#eaddd7',
-          500: '#e11d48',
-          600: '#be123c',
-          700: '#9f1239',
+        ny: {
+          black: '#111111',
+          charcoal: '#222222',
+          muted: '#666666',
+          border: '#e5e5e5',
+          light: '#f9f9f9',
+          red: '#c02d28' // subtle classic editorial red
         }
       }
     },

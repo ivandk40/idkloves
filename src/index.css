@@ -5,31 +5,39 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #111111;
   }
   
   body {
-    @apply transition-colors duration-200 antialiased;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: "Libre Caslon Text", "Caslon", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    @apply bg-rose-500 text-white;
+    background-color: #111111;
+    color: #ffffff;
   }
 }
 
-/* Custom scrollbar */
+/* Minimalist classic scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-stone-300 dark:bg-stone-700 rounded-full;
+  background: #cccccc;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-stone-400 dark:bg-stone-600;
+  background: #999999;
 }
