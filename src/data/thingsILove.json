@@ -1,0 +1,102 @@
+[
+  {
+    "id": "til-1",
+    "title": "Chemex & Single-Origin Pour Over",
+    "category": "Rituals & Coffee",
+    "tag": "Daily Ritual",
+    "description": "The morning quiet before screens turn on. 30 grams of freshly ground washed Ethiopian beans, 500 grams of 94°C water, and the hypnotic bloom that fills the kitchen with floral jasmine and bergamot notes.",
+    "whyLove": "It turns the morning into an intentional, slow meditation rather than a hurried chore.",
+    "favoriteDetail": "The unhurried drip sound hitting the borosilicate glass bowl.",
+    "rating": "Essential"
+  },
+  {
+    "id": "til-2",
+    "title": "Field Notes & Brass Mechanical Pencil",
+    "category": "Everyday Carry",
+    "tag": "Analog Tool",
+    "description": "Small enough to slip into a back pocket, indestructible enough to survive rain and crumpled days. Tactile 0.5mm 2B graphite gliding over dot grid paper.",
+    "whyLove": "Digital apps invite friction, distraction, and notification traps. Analog paper gives immediate clarity to chaotic thoughts.",
+    "favoriteDetail": "The patina that builds on solid brass after six months of daily use.",
+    "rating": "Daily Driver"
+  },
+  {
+    "id": "til-3",
+    "title": "Calvino's 'Invisible Cities'",
+    "category": "Books & Words",
+    "tag": "Literature",
+    "description": "Marco Polo describing imaginary cities to Kublai Khan. Cities built on spiderwebs, cities of mirrors, cities where the living converse with their future dead.",
+    "whyLove": "Prose so poetic and dense with architectural imagination that a single two-page vignette can alter how you see the street outside your window.",
+    "favoriteDetail": "The city of Isidora, where men arrive old to find the very pleasures they dreamed of when they were young.",
+    "rating": "All-Time"
+  },
+  {
+    "id": "til-4",
+    "title": "High-Density Mechanical Keyboards (75% / Topre)",
+    "category": "Tech & Craft",
+    "tag": "Hardware",
+    "description": "Lubed switches with deep 'thock' acoustics, heavy aluminum anodized chassis, and blank PBT keycaps that make typing code or essays feel like playing a Steinway.",
+    "whyLove": "If you touch something for 8 hours a day, the tactile resistance and auditory feedback change your relationship with work.",
+    "favoriteDetail": "The satisfying weight that keeps the board completely planted on the desk.",
+    "rating": "Essential"
+  },
+  {
+    "id": "til-5",
+    "title": "Bespoke Japanese Raw Selvedge Denim",
+    "category": "Objects & Wear",
+    "tag": "Clothing",
+    "description": "Stiff 14oz shuttle-loomed denim dyed with natural indigo. Unforgiving for the first three weeks, then custom-molded to your stride, your pockets, and your life.",
+    "whyLove": "Things built with integrity that don't deteriorate with wear, but rather tell the story of every year you wear them.",
+    "favoriteDetail": "The honeycomb fade patterns behind the knees.",
+    "rating": "Grail"
+  },
+  {
+    "id": "til-6",
+    "title": "Long Rainstorms on Old Tin Roofs",
+    "category": "Atmosphere & Nature",
+    "tag": "Sensory",
+    "description": "Late-afternoon deluge when the sky turns slate grey. A warm amber lamp on in the corner, a window slightly cracked for the petrichor smell.",
+    "whyLove": "A sudden permission slip from the universe to cancel every urgent obligation and just listen.",
+    "favoriteDetail": "The smell of dry soil hitting fresh cold rain.",
+    "rating": "Soul Food"
+  },
+  {
+    "id": "til-7",
+    "title": "Cast Iron Skillet with 5-Year Seasoning",
+    "category": "Rituals & Gastronomy",
+    "tag": "Kitchen",
+    "description": "Heavy lodge skillet blackened to a mirror sheen. Sizzling ribeye basted with foaming rosemary butter and smashed garlic cloves.",
+    "whyLove": "It will outlive us, our children, and our grandchildren. Cooking without teflon or synthetic coatings.",
+    "favoriteDetail": "A fried egg sliding across the surface as if on ice.",
+    "rating": "Heirloom"
+  },
+  {
+    "id": "til-8",
+    "title": "Brian Eno — 'Music for Airports'",
+    "category": "Sounds & Audio",
+    "tag": "Music",
+    "description": "Ambient music designed to induce calm and space to think, looping tape delays, soft piano chords, and vocal synthesizer phrases that suspend time.",
+    "whyLove": "The ultimate antidote to modern cognitive fragmentation and hyper-stimulation.",
+    "favoriteDetail": "1/1 — the nine-minute opener that resets your heart rate.",
+    "rating": "Timeless"
+  },
+  {
+    "id": "til-9",
+    "title": "Wabi-Sabi & The Beauty of Imperfection",
+    "category": "Mindsets & Philosophy",
+    "tag": "Perspective",
+    "description": "The traditional Japanese aesthetic centering on the acceptance of transience and imperfection. Cracks repaired with gold (kintsugi), rough textures, weathered cedar.",
+    "whyLove": "Relief from the suffocating corporate obsession with sterile, frictionless perfectionism.",
+    "favoriteDetail": "Acknowledging that nothing lasts, nothing is finished, and nothing is perfect.",
+    "rating": "Guiding Light"
+  },
+  {
+    "id": "til-10",
+    "title": "Midnight Walks in Empty Neighborhoods",
+    "category": "Atmosphere & Nature",
+    "tag": "Habit",
+    "description": "Walking without headphones through quiet residential streets between 11 PM and 1 AM when streetlights hum and you have the entire city to yourself.",
+    "whyLove": "Problems that seemed knotty and insurmountable at 3 PM untangle themselves effortlessly by block four.",
+    "favoriteDetail": "The crisp chill of night air in late autumn.",
+    "rating": "Therapy"
+  }
+]
