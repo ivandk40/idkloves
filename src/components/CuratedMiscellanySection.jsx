@@ -48,50 +48,50 @@ export default function CuratedMiscellanySection({
   });
 
   return (
-    <section className="space-y-10 animate-in fade-in duration-300">
+    <section className="space-y-6 animate-in fade-in duration-300">
       
-      {/* Editorial Header */}
-      <div className="border-b border-[#111111] pb-6">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div>
-            <span className="text-[11px] font-sans uppercase tracking-[0.25em] text-[#888888] block mb-1">
-              Section II • Internet Archive
+      {/* Editorial Header (Compact) */}
+      <div className="border-b border-[#111111] pb-3">
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+          <div className="flex items-baseline gap-3">
+            <span className="text-[10px] font-sans uppercase tracking-[0.25em] text-[#888888]">
+              Section II
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl font-normal text-[#111111] tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl font-normal text-[#111111] tracking-tight">
               Sherpa’s Miscellany
             </h2>
           </div>
-          <p className="max-w-md font-serif text-sm text-[#555555] leading-relaxed italic">
-            Curated content dredged from the far reaches of the internet. Gripping investigative journalism, aviation post-mortems, transfinite mathematics, eerie manga, and internet lore.
+          <p className="font-serif text-xs text-[#666666] italic">
+            Curated internet archive • {filteredGems.length} pieces
           </p>
         </div>
       </div>
 
-      {/* Category Navigation */}
-      <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-none border-b border-[#e5e5e5] text-xs font-sans uppercase tracking-wider">
+      {/* Category Navigation (Dense) */}
+      <div className="flex items-center gap-3 overflow-x-auto pb-1.5 scrollbar-none border-b border-[#e5e5e5] text-[11px] font-sans uppercase tracking-wider">
         {categories.map((cat) => {
           const isStaff = cat === '⭐️ Staff Picks';
           return (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`whitespace-nowrap pb-2 border-b-2 transition-all flex items-center gap-1.5 ${
+              className={`whitespace-nowrap pb-1.5 border-b-2 transition-all flex items-center gap-1 ${
                 selectedCategory === cat
                   ? 'border-[#111111] text-[#111111] font-semibold'
                   : 'border-transparent text-[#777777] hover:text-[#111111]'
               }`}
             >
-              {isStaff && <Star className="w-3 h-3 fill-[#111111] text-[#111111]" />}
+              {isStaff && <Star className="w-2.5 h-2.5 fill-[#111111] text-[#111111]" />}
               {cat}
             </button>
           );
         })}
       </div>
 
-      {/* List of Curated Gems */}
+      {/* Dense List of Curated Gems */}
       {filteredGems.length === 0 ? (
-        <div className="text-center py-20 px-4 border border-dashed border-[#dddddd] rounded">
-          <p className="font-serif italic text-base text-[#666666]">No amusements found in this category.</p>
+        <div className="text-center py-12 px-4 border border-dashed border-[#dddddd] rounded">
+          <p className="font-serif italic text-sm text-[#666666]">No amusements found in this category.</p>
         </div>
       ) : (
         <div className="divide-y divide-[#eeeeee]">
@@ -101,92 +101,83 @@ export default function CuratedMiscellanySection({
             return (
               <article
                 key={gem.id}
-                className="py-8 group flex flex-col md:flex-row md:items-baseline justify-between gap-6 transition-colors"
+                className="py-3 sm:py-3.5 group hover:bg-[#fafafa] px-2 -mx-2 rounded transition-colors"
               >
-                {/* Left Column: Number, Category, Type, Staff Pick */}
-                <div className="md:w-56 flex-shrink-0 space-y-1">
-                  <span className="font-sans text-[11px] uppercase tracking-widest text-[#999999] block">
-                    {gem.category}
-                  </span>
-                  
-                  <div className="flex items-center gap-2 pt-1">
-                    <span className="text-[10px] font-sans uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#f3f3f3] text-[#555555]">
-                      {gem.type}
+                {/* Row 1: Title, Author, and Metadata */}
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
+                  <div className="flex items-baseline gap-2 flex-wrap min-w-0">
+                    <span className="font-sans text-[10px] text-[#999999] font-mono select-none w-5 flex-shrink-0">
+                      {String(idx + 1).padStart(2, '0')}.
                     </span>
-                    {gem.isStaffPick && (
-                      <span className="text-[10px] font-sans uppercase tracking-wider font-semibold text-[#111111] flex items-center gap-0.5">
-                        <Star className="w-3 h-3 fill-[#111111]" /> Pick
+
+                    <h3 className="font-display text-base sm:text-lg text-[#111111] font-normal tracking-tight group-hover:underline underline-offset-2">
+                      {gem.url ? (
+                        <a 
+                          href={gem.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="hover:opacity-80"
+                        >
+                          {gem.title}
+                        </a>
+                      ) : (
+                        <span 
+                          onClick={() => hasStory && onSelectStory(gem)}
+                          className={hasStory ? 'cursor-pointer hover:opacity-80' : ''}
+                        >
+                          {gem.title}
+                        </span>
+                      )}
+                    </h3>
+
+                    {gem.author && (
+                      <span className="font-sans text-[11px] uppercase tracking-wider text-[#777777]">
+                        — {gem.author}
                       </span>
                     )}
                   </div>
 
-                  {gem.readingTime && (
-                    <span className="font-sans text-[11px] text-[#888888] flex items-center gap-1 pt-1">
-                      <Clock className="w-3 h-3 text-[#999999]" />
-                      {gem.readingTime}
-                    </span>
-                  )}
-                </div>
-
-                {/* Main Column: Title, Author, Description, Actions */}
-                <div className="flex-1 space-y-2.5">
-                  <h3 className="font-display text-2xl sm:text-3xl text-[#111111] font-normal tracking-tight group-hover:underline underline-offset-4 decoration-1">
-                    {gem.url ? (
-                      <a 
-                        href={gem.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 hover:opacity-80"
-                      >
-                        <span>{gem.title}</span>
-                        <ExternalLink className="w-4 h-4 text-[#888888] inline" />
-                      </a>
-                    ) : (
-                      <span 
-                        onClick={() => hasStory && onSelectStory(gem)}
-                        className={hasStory ? 'cursor-pointer hover:opacity-80' : ''}
-                      >
-                        {gem.title}
+                  {/* Right Badges & Actions */}
+                  <div className="flex items-center gap-2 flex-shrink-0 self-start sm:self-auto text-[10px] font-sans">
+                    {gem.isStaffPick && (
+                      <span className="text-[#111111] font-semibold flex items-center gap-0.5">
+                        <Star className="w-2.5 h-2.5 fill-[#111111]" /> Pick
                       </span>
                     )}
-                  </h3>
 
-                  {gem.author && (
-                    <p className="font-sans text-xs uppercase tracking-wider text-[#666666]">
-                      By <span className="text-[#111111] font-medium">{gem.author}</span>
-                    </p>
-                  )}
+                    <span className="text-[#888888] uppercase tracking-wider">
+                      {gem.category}
+                    </span>
 
-                  {gem.description && (
-                    <p className="font-serif text-base text-[#444444] leading-relaxed pt-1">
-                      {gem.description}
-                    </p>
-                  )}
-
-                  {/* Actions */}
-                  <div className="pt-2 flex items-center gap-4 text-xs font-sans">
-                    {hasStory && (
+                    {hasStory ? (
                       <button
                         onClick={() => onSelectStory(gem)}
-                        className="font-sans font-medium text-[#111111] hover:underline underline-offset-4 flex items-center gap-1.5"
+                        className="ml-1 text-[#111111] font-medium hover:underline flex items-center gap-0.5 bg-[#f0f0f0] hover:bg-[#e4e4e4] px-1.5 py-0.5 rounded transition-colors"
                       >
-                        <BookOpen className="w-3.5 h-3.5" />
-                        <span>Read Full Story →</span>
+                        <BookOpen className="w-2.5 h-2.5" />
+                        <span>Story</span>
                       </button>
-                    )}
-
-                    {gem.url && (
+                    ) : gem.url ? (
                       <a
                         href={gem.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#666666] hover:text-[#111111] hover:underline underline-offset-4 flex items-center gap-1"
+                        className="ml-1 text-[#555555] hover:text-[#111111] flex items-center gap-0.5 px-1.5 py-0.5 rounded hover:bg-[#f0f0f0] transition-colors"
+                        title="Open external source"
                       >
-                        <span>Open original source ↗</span>
+                        <span>Open</span>
+                        <ExternalLink className="w-2.5 h-2.5" />
                       </a>
-                    )}
+                    ) : null}
                   </div>
                 </div>
+
+                {/* Row 2: Description (Compact) */}
+                {gem.description && (
+                  <p className="font-serif text-xs sm:text-[13px] text-[#555555] leading-snug line-clamp-2 mt-1 sm:pl-7">
+                    {gem.description}
+                  </p>
+                )}
               </article>
             );
           })}

@@ -12,7 +12,7 @@ export default function Header({
   return (
     <header className="bg-white border-b border-[#e5e5e5] sticky top-0 z-40 transition-colors">
       {/* Top Masthead (No 'idk loves' title) */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8 pb-4 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-5 pb-3 text-center">
         
         {/* Subtitle / Header Moniker */}
         <p className="font-sans text-xs sm:text-sm uppercase tracking-[0.25em] text-[#666666]">
@@ -20,7 +20,7 @@ export default function Header({
         </p>
 
         {/* Minimalist 2-Section Switcher */}
-        <div className="mt-5 flex items-center justify-center gap-8 border-t border-b border-[#e5e5e5] py-3 text-xs sm:text-sm font-sans uppercase tracking-widest">
+        <div className="mt-3.5 flex items-center justify-center gap-8 border-t border-b border-[#e5e5e5] py-2 text-xs sm:text-sm font-sans uppercase tracking-widest">
           <button
             onClick={() => setActiveTab('loves')}
             className={`transition-all py-1 border-b-2 ${
