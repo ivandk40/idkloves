@@ -1,7 +1,7 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, ExternalLink } from 'lucide-react';
 
-export default function Footer({ onSelectSection }) {
+export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -13,20 +13,17 @@ export default function Footer({ onSelectSection }) {
           Made by Ivan with ❤️
         </p>
 
-        <div className="flex items-center gap-6 text-xs font-sans uppercase tracking-widest text-[#555555]">
-          <button 
-            onClick={() => onSelectSection('curated')}
-            className="hover:text-[#111111] transition-colors"
+        <div className="flex items-center gap-5 text-xs font-sans uppercase tracking-widest text-[#555555]">
+          <a
+            href="https://liminalreads.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#111111] transition-colors flex items-center gap-1.5"
+            title="Explore curated compendious amusements"
           >
-            Compendious Amusements
-          </button>
-          <span>•</span>
-          <button 
-            onClick={() => onSelectSection('loves')}
-            className="hover:text-[#111111] transition-colors"
-          >
-            Things I Love
-          </button>
+            <span>Compendious Amusements (liminalreads.com)</span>
+            <ExternalLink className="w-3 h-3 text-[#888888]" />
+          </a>
           <span>•</span>
           <button 
             onClick={scrollToTop}

@@ -1,93 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import ThingsILoveSection from './components/ThingsILoveSection';
-import CuratedMiscellanySection from './components/CuratedMiscellanySection';
-import StoryReaderModal from './components/StoryReaderModal';
-import RandomGemModal from './components/RandomGemModal';
+import AddThingModal from './components/AddThingModal';
 import Footer from './components/Footer';
 
-import thingsData from './data/thingsILove.json';
-import initialGems from './data/curatedGems.json';
+import defaultThings from './data/thingsILove.json';
 
 export default function App() {
-  // Clear any legacy mock things from previous sessions
-  if (typeof window !== 'undefined') {
-    localStorage.removeItem('idkloves_things');
-  }
-
-  // Tab state: 'curated' is the primary first section
-  const [activeTab, setActiveTab] = useState('curated');
   const [searchQuery, setSearchQuery] = useState('');
+  const [things, setThings] = useState(() => {
+    try {
+      const saved = localStorage.getItem('idkloves_saved_things');
+      return saved ? JSON.parse(saved) : defaultThings;
+    } catch {
+      return defaultThings;
+    }
+  });
 
-  // Things I Love list is blank by default
-  const [things] = useState(thingsData);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  // Curated Gems (62 items from Notion)
-  const [gems] = useState(initialGems);
+  useEffect(() => {
+    try {
+      localStorage.setItem('idkloves_saved_things', JSON.stringify(things));
+    } catch (e) {
+      console.error('Failed to save to localStorage:', e);
+    }
+  }, [things]);
 
-  // Modals
-  const [selectedStory, setSelectedStory] = useState(null);
-  const [randomGem, setRandomGem] = useState(null);
-
-  // Random Gem trigger
-  const handleOpenRandomGem = () => {
-    const randomIndex = Math.floor(Math.random() * gems.length);
-    setRandomGem(gems[randomIndex]);
-  };
-
-  const handleShuffleRandomGem = () => {
-    const randomIndex = Math.floor(Math.random() * gems.length);
-    setRandomGem(gems[randomIndex]);
+  const handleAddThing = (newThing) => {
+    setThings((prev) => [newThing, ...prev]);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#111111]">
-      {/* Header (No 'idk loves' title, no Add button) */}
       <Header
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        onOpenRandomGem={handleOpenRandomGem}
-        counts={{
-          loves: things.length,
-          curated: gems.length
-        }}
+        onOpenAddModal={() => setIsAddModalOpen(true)}
+        count={things.length}
       />
 
-      {/* Main Content Area */}
       <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 w-full">
-        {activeTab === 'loves' ? (
-          <ThingsILoveSection
-            things={things}
-            searchQuery={searchQuery}
-          />
-        ) : (
-          <CuratedMiscellanySection
-            gems={gems}
-            onSelectStory={(story) => setSelectedStory(story)}
-            searchQuery={searchQuery}
-          />
-        )}
+        <ThingsILoveSection
+          things={things}
+          searchQuery={searchQuery}
+          onOpenAddModal={() => setIsAddModalOpen(true)}
+        />
       </main>
 
-      {/* Minimalist Footer */}
-      <Footer onSelectSection={(tab) => setActiveTab(tab)} />
+      <Footer />
 
-      {/* Modals */}
-      {selectedStory && (
-        <StoryReaderModal
-          story={selectedStory}
-          onClose={() => setSelectedStory(null)}
-        />
-      )}
-
-      {randomGem && (
-        <RandomGemModal
-          gem={randomGem}
-          onShuffle={handleShuffleRandomGem}
-          onClose={() => setRandomGem(null)}
-          onReadStory={(story) => setSelectedStory(story)}
+      {isAddModalOpen && (
+        <AddThingModal
+          onAdd={handleAddThing}
+          onClose={() => setIsAddModalOpen(false)}
+          allThings={things}
         />
       )}
     </div>
