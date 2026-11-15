@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22 width=%2232%22 height=%2232%22><text y=%2226%22 font-size=%2224%22>🤍</text></svg>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      if (location.protocol === 'http:' && location.hostname !== 'localhost') {
+        location.replace('https://' + location.host + location.pathname + location.search);
+      }
+    </script>
     <title>idk loves — things I adore & internet curiosities</title>
     <meta name="description" content="A curated digital cabinet of things I love, paired with oddities, essays, and gems dredged from the far reaches of the internet." />
     <meta property="og:title" content="idk loves — curated things & compendious amusements" />
