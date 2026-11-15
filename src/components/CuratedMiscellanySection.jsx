@@ -58,7 +58,7 @@ export default function CuratedMiscellanySection({
               Section II
             </span>
             <h2 className="font-serif italic text-base sm:text-lg text-[#222222] leading-snug">
-              Investigative journalism, aviation post-mortems, transfinite mathematics, eerie manga, and internet lore.
+              Investigative journalism, aviation post-mortems, darknet dispatches, transfinite mathematics, bizarre true crime, eerie manga, and Reddit folklore.
             </h2>
           </div>
           <span className="font-sans text-[11px] text-[#888888] whitespace-nowrap flex-shrink-0 self-end sm:self-auto">
