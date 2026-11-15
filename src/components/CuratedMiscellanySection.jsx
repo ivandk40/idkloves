@@ -10,7 +10,7 @@ export default function CuratedMiscellanySection({
 
   const categories = [
     'All',
-    '⭐️ Personal Favorites',
+    'Personal Favorites',
     'Essays',
     'The New Yorker',
     'Articles',
@@ -27,7 +27,7 @@ export default function CuratedMiscellanySection({
 
   const filteredGems = gems.filter((gem) => {
     let matchesCat = true;
-    if (selectedCategory === '⭐️ Personal Favorites') {
+    if (selectedCategory === 'Personal Favorites') {
       matchesCat = gem.isStaffPick;
     } else if (selectedCategory !== 'All') {
       matchesCat = gem.category.toLowerCase() === selectedCategory.toLowerCase();
@@ -70,7 +70,7 @@ export default function CuratedMiscellanySection({
       {/* Category Navigation (Cleanly Wrapped, No Horizontal Scrollbar) */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-[#e5e5e5] pb-2.5 text-[11px] font-sans uppercase tracking-wider">
         {categories.map((cat) => {
-          const isFavorite = cat === '⭐️ Personal Favorites';
+          const isFavorite = cat === 'Personal Favorites';
           return (
             <button
               key={cat}
