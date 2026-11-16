@@ -12,7 +12,11 @@
       "Key lime pie",
       "Coconut ice cream",
       "Mamey ice cream",
-      "Macadamia nuts"
+      "Macadamia nuts",
+      "Adjarian khachapuri",
+      "Khinkali",
+      "Baby back ribs",
+      "Garlic parmesan frites"
     ]
   },
   {
@@ -34,6 +38,7 @@
     "items": [
       "Cold sunny days",
       "Rooftop bars",
+      "Tiki bars",
       "Kenopsia"
     ]
   },
@@ -46,7 +51,11 @@
   {
     "category": "Culture & Media",
     "items": [
-      "Documentaries"
+      "Documentaries",
+      {
+        "title": "Liminal Reads",
+        "url": "https://liminalreads.com"
+      }
     ]
   },
   {
@@ -64,6 +73,7 @@
       "Paris",
       "Amsterdam",
       "Costa Alegre",
+      "French Alps",
       "Kazbegi",
       "Svaneti"
     ]
