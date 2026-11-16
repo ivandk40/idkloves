@@ -1,42 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import ThingsILoveSection from './components/ThingsILoveSection';
-import AddThingModal from './components/AddThingModal';
 import Footer from './components/Footer';
 
 import defaultThings from './data/thingsILove.json';
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [things, setThings] = useState(() => {
-    try {
-      const saved = localStorage.getItem('idkloves_saved_things');
-      return saved ? JSON.parse(saved) : defaultThings;
-    } catch {
-      return defaultThings;
-    }
-  });
+  const things = defaultThings;
 
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-
+  // Clear previous localStorage state to guarantee the page is static
   useEffect(() => {
     try {
-      localStorage.setItem('idkloves_saved_things', JSON.stringify(things));
-    } catch (e) {
-      console.error('Failed to save to localStorage:', e);
+      localStorage.removeItem('idkloves_saved_things');
+    } catch {
+      // Ignore in private/restricted browsing contexts
     }
-  }, [things]);
-
-  const handleAddThing = (newThing) => {
-    setThings((prev) => [newThing, ...prev]);
-  };
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#111111]">
       <Header
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        onOpenAddModal={() => setIsAddModalOpen(true)}
         count={things.length}
       />
 
@@ -44,19 +30,10 @@ export default function App() {
         <ThingsILoveSection
           things={things}
           searchQuery={searchQuery}
-          onOpenAddModal={() => setIsAddModalOpen(true)}
         />
       </main>
 
       <Footer />
-
-      {isAddModalOpen && (
-        <AddThingModal
-          onAdd={handleAddThing}
-          onClose={() => setIsAddModalOpen(false)}
-          allThings={things}
-        />
-      )}
     </div>
   );
 }

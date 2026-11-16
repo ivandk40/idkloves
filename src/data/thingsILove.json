@@ -1,1 +1,186 @@
-[]
+[
+  {
+    "id": "til-1",
+    "title": "Tartar Sauce",
+    "category": "Food & Drink",
+    "tag": "Condiment",
+    "description": "Tangy, rich, and briny with capers, chopped cornichons, fresh dill, and lemon zest. The indispensable companion to crisp, golden fried seafood.",
+    "whyLove": "It turns simple fried fish into something craveable and textured."
+  },
+  {
+    "id": "til-2",
+    "title": "Fondue",
+    "category": "Food & Drink",
+    "tag": "Alpine",
+    "description": "A steaming communal caquelon of melted Gruyère AOP and Vacherin Fribourgeois swirled with dry white wine, garlic, and kirsch.",
+    "whyLove": "Unrushed alpine comfort and the best way to share a cold winter evening with friends."
+  },
+  {
+    "id": "til-3",
+    "title": "Tartiflette",
+    "category": "Food & Drink",
+    "tag": "Savoyard",
+    "description": "The quintessential Haute-Savoie gratin: tender sliced potatoes, caramelized onions, and smoky lardons drenched in molten Reblochon cheese.",
+    "whyLove": "Pure mountain indulgence after hours out in the freezing snow."
+  },
+  {
+    "id": "til-4",
+    "title": "Gazpacho",
+    "category": "Food & Drink",
+    "tag": "Andalusian",
+    "description": "Chilled Andalusian liquid sunshine blended from ripe vine tomatoes, crisp cucumber, bell pepper, garlic, sherry vinegar, and peppery extra-virgin olive oil.",
+    "whyLove": "Incomparably refreshing when the summer heat is relentless."
+  },
+  {
+    "id": "til-5",
+    "title": "Chilaquiles",
+    "category": "Food & Drink",
+    "tag": "Breakfast",
+    "description": "Crisp fried corn tortilla quarters lightly bathed in vibrant salsa verde or roasted salsa roja, topped with crema, crumbled queso fresco, onion, and cilantro.",
+    "whyLove": "The undisputed king of Mexican breakfasts—bold, crunchy, savory, and restorative."
+  },
+  {
+    "id": "til-6",
+    "title": "IPAs",
+    "category": "Food & Drink",
+    "tag": "Craft Beer",
+    "description": "Aromatic, hop-forward ales bursting with citrus zest, damp pine, and a clean, biting bitterness that cuts through anything.",
+    "whyLove": "That first cold, resinous sip after a long week."
+  },
+  {
+    "id": "til-7",
+    "title": "Skiing",
+    "category": "Sports & Activities",
+    "tag": "Alpine Sport",
+    "description": "Carving high-speed arcs down fresh corduroy or floating weightlessly through knee-deep backcountry powder amidst crisp mountain air.",
+    "whyLove": "Total focus and adrenaline where the rest of the world ceases to exist."
+  },
+  {
+    "id": "til-8",
+    "title": "Padel",
+    "category": "Sports & Activities",
+    "tag": "Racquet Sport",
+    "description": "High-octane rallies, quick-reflex volleys, and three-dimensional geometry off the glass walls in close-quarters doubles play.",
+    "whyLove": "Addictive, fast-paced tactical fun that never gets repetitive."
+  },
+  {
+    "id": "til-9",
+    "title": "Sauna",
+    "category": "Wellness & Rituals",
+    "tag": "Thermal Ritual",
+    "description": "Sweating out tension on hot cedar benches in 90°C dry heat, punctuated by the shocking clarity of an ice bath plunge.",
+    "whyLove": "The deepest physical reset and endorphin rush known to humanity."
+  },
+  {
+    "id": "til-10",
+    "title": "Steam Baths",
+    "category": "Wellness & Rituals",
+    "tag": "Hydrotherapy",
+    "description": "Dense, enveloping clouds of eucalyptus-infused vapor, soothing muscles and releasing mental chatter in quiet, humid seclusion.",
+    "whyLove": "A timeless sanctuary of calm that melts away tension."
+  },
+  {
+    "id": "til-11",
+    "title": "Cold Sunny Days",
+    "category": "Atmosphere & Moments",
+    "tag": "Weather",
+    "description": "Freezing sub-zero temperatures beneath an unclouded, piercing blue sky, with golden sunlight warming your back through crisp winter air.",
+    "whyLove": "Invigorating clarity and light that makes everything feel razor-sharp."
+  },
+  {
+    "id": "til-12",
+    "title": "Kenopsia (Kensopia)",
+    "category": "Atmosphere & Moments",
+    "tag": "Liminal Sensation",
+    "description": "The eerie, forlorn atmosphere of a place that is usually teeming with people and noise, but is now quiet, empty, and suspended in time.",
+    "whyLove": "A haunting poetic stillness found in vacant hallways, off-season resorts, and empty stations."
+  },
+  {
+    "id": "til-13",
+    "title": "Business Class",
+    "category": "Travel & Comfort",
+    "tag": "Aviation",
+    "description": "Lie-flat suites above the clouds, noise-canceling calm, crisp champagne, and waking up refreshed in a new continent.",
+    "whyLove": "Turning long-haul transit from an exhausting trial into an oasis of quiet productivity and rest."
+  },
+  {
+    "id": "til-14",
+    "title": "Documentaries",
+    "category": "Culture & Media",
+    "tag": "Non-Fiction Cinema",
+    "description": "Deep-dive investigative journalism, eccentric character portraits, and cinematic chronicles of historical turning points.",
+    "whyLove": "Reality is always stranger, richer, and more compelling than fiction."
+  },
+  {
+    "id": "til-15",
+    "title": "Incandescent",
+    "category": "Words",
+    "tag": "Adjective",
+    "description": "Emitting light as a result of being heated; glowing with passion, radiant intensity, or luminous brilliance.",
+    "whyLove": "A word that carries warmth, electricity, and incandescent emotion in its very syllables."
+  },
+  {
+    "id": "til-16",
+    "title": "Itacate",
+    "category": "Words",
+    "tag": "Nahuatl Origin",
+    "description": "From the Nahuatl 'itacatl'—a provision of food or generous leftovers carefully packed to take on a journey or sent home with guests after a feast.",
+    "whyLove": "A cultural concept capturing generosity, maternal care, and the continuation of hospitality."
+  },
+  {
+    "id": "til-17",
+    "title": "Boreal",
+    "category": "Words",
+    "tag": "Adjective",
+    "description": "Of or pertaining to the North or northern regions; evocative of subarctic pine forests, cold winds, and aurora borealis.",
+    "whyLove": "Sounds as crisp, ancient, and evergreen as a subarctic spruce forest."
+  },
+  {
+    "id": "til-18",
+    "title": "Velleity",
+    "category": "Words",
+    "tag": "Noun",
+    "description": "A mere wish or inclination not strong enough to lead to the slightest action; the faintest, gentlest murmur of volition.",
+    "whyLove": "A delightfully precise diagnostic term for daydreaming without consequence."
+  },
+  {
+    "id": "til-19",
+    "title": "Paris",
+    "category": "Cities & Places",
+    "tag": "France",
+    "description": "Zinc roofs in the rain, corner zinc counters with an espresso, Haussmannian stone, and solitary strolls along the quays of the Seine.",
+    "whyLove": "A city that rewards aimless wandering better than anywhere else on earth."
+  },
+  {
+    "id": "til-20",
+    "title": "Amsterdam",
+    "category": "Cities & Places",
+    "tag": "Netherlands",
+    "description": "Rippling canal rings, leaning 17th-century brick facades, bicycle bells, and warm amber light spilling from cozy brown cafés on foggy evenings.",
+    "whyLove": "Human-scale urbanism, effortless canal reflections, and an unhurried rhythm of life."
+  },
+  {
+    "id": "til-21",
+    "title": "Costa Alegre",
+    "category": "Cities & Places",
+    "tag": "Mexico",
+    "description": "Jalisco's dramatic Pacific coastline where emerald jungle mountains plunge directly into wild ocean waves, secluded coves, and golden sunsets.",
+    "whyLove": "Unspoiled, rugged coastal magic untouched by mass commercialization."
+  },
+  {
+    "id": "til-22",
+    "title": "Kazbegi",
+    "category": "Cities & Places",
+    "tag": "Georgia",
+    "description": "The monumental peaks of the High Caucasus mountains and the solitary silhouette of the 14th-century Gergeti Trinity Church perched high beneath Mount Kazbek.",
+    "whyLove": "Awe-inspiring vertical topography that puts all human concerns in immediate perspective."
+  },
+  {
+    "id": "til-23",
+    "title": "Svaneti",
+    "category": "Cities & Places",
+    "tag": "Georgia",
+    "description": "An ancient, isolated alpine region crowned by snowy summits and fortified with thousands of stone medieval defensive towers (koshki).",
+    "whyLove": "Feels like stepping straight into a medieval highland sanctuary lost in time."
+  }
+]

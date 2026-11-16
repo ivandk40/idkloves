@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { Plus } from 'lucide-react';
 
-export default function ThingsILoveSection({ things = [], searchQuery = '', onOpenAddModal }) {
+export default function ThingsILoveSection({ things = [], searchQuery = '' }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = things.length > 0 ? ['All', ...new Set(things.map(t => t.category))] : [];
 
   const filteredThings = things.filter(item => {
     const matchesCat = selectedCategory === 'All' || item.category === selectedCategory;
+    const q = searchQuery.toLowerCase();
     const matchesSearch = !searchQuery || 
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      (item.category && item.category.toLowerCase().includes(searchQuery.toLowerCase()));
+      item.title.toLowerCase().includes(q) ||
+      (item.description && item.description.toLowerCase().includes(q)) ||
+      (item.category && item.category.toLowerCase().includes(q)) ||
+      (item.tag && item.tag.toLowerCase().includes(q)) ||
+      (item.whyLove && item.whyLove.toLowerCase().includes(q));
     return matchesCat && matchesSearch;
   });
 
@@ -37,12 +39,12 @@ export default function ThingsILoveSection({ things = [], searchQuery = '', onOp
             ))}
           </div>
           <span className="font-sans text-[11px] text-[#888888] whitespace-nowrap self-end sm:self-center">
-            {filteredThings.length} items
+            {filteredThings.length} {filteredThings.length === 1 ? 'item' : 'items'}
           </span>
         </div>
       )}
 
-      {/* When blank: quiet minimalist placeholder with invite to add */}
+      {/* When blank: quiet minimalist placeholder */}
       {things.length === 0 ? (
         <div className="py-24 text-center">
           <p className="font-serif italic text-lg text-[#555555]">
@@ -51,15 +53,6 @@ export default function ThingsILoveSection({ things = [], searchQuery = '', onOp
           <p className="mt-2 font-sans text-xs uppercase tracking-widest text-[#999999]">
             A personal canon in progress
           </p>
-          {onOpenAddModal && (
-            <button
-              onClick={onOpenAddModal}
-              className="mt-6 inline-flex items-center gap-1.5 px-4 py-2 rounded border border-[#111111] text-xs font-sans uppercase tracking-wider hover:bg-[#111111] hover:text-white transition-colors"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              <span>Record your first love</span>
-            </button>
-          )}
         </div>
       ) : (
         <div className="divide-y divide-[#eeeeee]">
