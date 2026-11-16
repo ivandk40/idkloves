@@ -7,7 +7,12 @@
       "Tartiflette",
       "Gazpacho",
       "Chilaquiles",
-      "IPAs"
+      "IPAs",
+      "Basque cheesecake",
+      "Key lime pie",
+      "Coconut ice cream",
+      "Mamey ice cream",
+      "Macadamia nuts"
     ]
   },
   {
@@ -28,6 +33,7 @@
     "category": "Atmosphere & Moments",
     "items": [
       "Cold sunny days",
+      "Rooftop bars",
       "Kenopsia"
     ]
   },
