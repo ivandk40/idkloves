@@ -1,103 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function ThingsILoveSection({ things = [], searchQuery = '' }) {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
-  const categories = things.length > 0 ? ['All', ...new Set(things.map(t => t.category))] : [];
-
-  const filteredThings = things.filter(item => {
-    const matchesCat = selectedCategory === 'All' || item.category === selectedCategory;
-    const q = searchQuery.toLowerCase();
-    const matchesSearch = !searchQuery || 
-      item.title.toLowerCase().includes(q) ||
-      (item.description && item.description.toLowerCase().includes(q)) ||
-      (item.category && item.category.toLowerCase().includes(q)) ||
-      (item.tag && item.tag.toLowerCase().includes(q)) ||
-      (item.whyLove && item.whyLove.toLowerCase().includes(q));
-    return matchesCat && matchesSearch;
-  });
-
+export default function ThingsILoveSection({ categories = [] }) {
   return (
-    <section className="space-y-6 animate-in fade-in duration-300">
-      
-      {/* Category Navigation (Cleanly Wrapped, No Horizontal Scrollbar) */}
-      {categories.length > 1 && (
-        <div className="flex flex-wrap items-center justify-between gap-y-3 border-b border-[#e5e5e5] pb-2.5">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-sans uppercase tracking-wider">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`pb-1 border-b-2 transition-all ${
-                  selectedCategory === cat
-                    ? 'border-[#111111] text-[#111111] font-semibold'
-                    : 'border-transparent text-[#777777] hover:text-[#111111]'
-                }`}
+    <div className="max-w-md mx-auto space-y-7 py-4">
+      {categories.map((group) => (
+        <section key={group.category} className="space-y-1.5">
+          <h2 className="text-[11px] font-sans font-medium uppercase tracking-widest text-[#888888] border-b border-[#eeeeee] pb-1">
+            {group.category}
+          </h2>
+          <ul className="space-y-1">
+            {group.items.map((item, idx) => (
+              <li
+                key={idx}
+                className="font-serif italic text-base sm:text-[17px] text-[#111111] leading-snug"
               >
-                {cat} {cat === 'All' ? `(${things.length})` : ''}
-              </button>
+                {item}
+              </li>
             ))}
-          </div>
-          <span className="font-sans text-[11px] text-[#888888] whitespace-nowrap self-end sm:self-center">
-            {filteredThings.length} {filteredThings.length === 1 ? 'item' : 'items'}
-          </span>
-        </div>
-      )}
-
-      {/* When blank: quiet minimalist placeholder */}
-      {things.length === 0 ? (
-        <div className="py-24 text-center">
-          <p className="font-serif italic text-lg text-[#555555]">
-            Currently unwritten.
-          </p>
-          <p className="mt-2 font-sans text-xs uppercase tracking-widest text-[#999999]">
-            A personal canon in progress
-          </p>
-        </div>
-      ) : (
-        <div className="divide-y divide-[#eeeeee]">
-          {filteredThings.map((item, idx) => (
-            <article
-              key={item.id || idx}
-              className="py-3.5 sm:py-4 group hover:bg-[#fafafa] px-3 -mx-3 rounded transition-colors"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
-                <div className="flex items-baseline gap-2 flex-wrap min-w-0">
-                  <span className="font-sans text-[10px] text-[#999999] font-mono select-none w-5 flex-shrink-0">
-                    {String(idx + 1).padStart(2, '0')}.
-                  </span>
-                  <h3 className="font-display text-base sm:text-lg text-[#111111] font-normal tracking-tight">
-                    {item.title}
-                  </h3>
-                  {item.category && (
-                    <span className="font-sans text-[11px] uppercase tracking-wider text-[#777777]">
-                      — {item.category}
-                    </span>
-                  )}
-                </div>
-
-                {item.tag && (
-                  <span className="text-[10px] font-sans uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#f3f3f3] text-[#555555]">
-                    {item.tag}
-                  </span>
-                )}
-              </div>
-
-              {item.description && (
-                <p className="font-serif text-xs sm:text-[13px] text-[#555555] leading-relaxed mt-1.5 sm:pl-7">
-                  {item.description}
-                </p>
-              )}
-
-              {item.whyLove && (
-                <p className="font-serif italic text-xs text-[#777777] leading-relaxed mt-1 sm:pl-7">
-                  "{item.whyLove}"
-                </p>
-              )}
-            </article>
-          ))}
-        </div>
-      )}
-    </section>
+          </ul>
+        </section>
+      ))}
+    </div>
   );
 }
